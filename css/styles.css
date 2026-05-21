@@ -47,3 +47,38 @@ body {
     mask-composite: exclude;
     pointer-events: none;
 }
+
+/* Mobile menu animations & styles */
+@keyframes menu-in {
+    from { opacity: 0; transform: translateY(-6px) scaleY(.98); }
+    to   { opacity: 1; transform: translateY(0) scaleY(1); }
+}
+@keyframes menu-out {
+    from { opacity: 1; transform: translateY(0) scaleY(1); }
+    to   { opacity: 0; transform: translateY(-6px) scaleY(.98); }
+}
+.menu-enter { animation: menu-in 200ms ease-out forwards; }
+.menu-leave { animation: menu-out 160ms ease-in forwards; }
+
+#mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 6px;
+    background: linear-gradient(180deg, rgba(6,8,15,0.96), rgba(6,8,15,0.98));
+    box-shadow: 0 14px 40px rgba(2,6,23,0.6);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    z-index: 60;
+    transform-origin: top center;
+}
+
+/* Mobile link hover */
+#mobile-menu a { display: block; padding: 0.6rem 0.75rem; border-radius: 8px; }
+#mobile-menu a:hover { background: rgba(255,255,255,0.03); }
+
+/* Icon transitions (swap hamburger/close) */
+.hamburger-icon, .close-icon { transition: opacity 160ms ease, transform 160ms ease; }
+.close-icon.hidden { opacity: 0; transform: rotate(0deg) scale(.95); }
+.hamburger-icon.hidden { opacity: 0; transform: rotate(0deg) scale(.95); }

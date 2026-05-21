@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PhishShield | Prevención de Phishing con IA y MCP</title>
+    <title>PishShield | Detección de Phishing con Gemini + Chrome Extension</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -29,12 +29,28 @@
                         <circle cx="140" cy="260" r="20" fill="#3b82f6" />
                         <circle cx="260" cy="260" r="20" fill="#3b82f6" />
                     </svg>
-                    <span class="text-white font-bold text-xl tracking-wide">Phish<span class="text-primary">Shield</span></span>
+                    <span class="text-white font-bold text-xl tracking-wide">Pish<span class="text-primary">Shield</span></span>
                 </div>
+                <!-- Mobile menu button (visible only on small screens) -->
+                <button id="nav-toggle" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white focus:outline-none" aria-expanded="false" aria-label="Abrir menú">
+                    <svg class="h-6 w-6 hamburger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg class="h-6 w-6 close-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
                 <div class="hidden md:flex space-x-8 items-center text-sm font-medium">
                     <a href="educacion.html" class="glass-panel text-white px-5 py-2 rounded-lg transition-colors">Educación</a>
                     <a href="como-funciona.html" class="glass-panel text-white px-5 py-2 rounded-lg transition-colors">Cómo funciona</a>
                     <a href="que-detectamos.html" class="glass-panel text-white px-5 py-2 rounded-lg transition-colors">Qué detectamos</a>
+                </div>
+                <!-- Mobile menu (hidden by default) -->
+                <div id="mobile-menu" class="md:hidden hidden px-4 pt-2 pb-3 space-y-1">
+                    <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white">Inicio</a>
+                    <a href="educacion.html" class="block px-3 py-2 rounded-md text-base font-medium text-white">Educación</a>
+                    <a href="como-funciona.html" class="block px-3 py-2 rounded-md text-base font-medium text-white">Cómo funciona</a>
+                    <a href="que-detectamos.html" class="block px-3 py-2 rounded-md text-base font-medium text-white">Qué detectamos</a>
                 </div>
             </div>
         </div>
@@ -46,27 +62,27 @@
             
             <div class="lg:w-1/2 flex flex-col items-start text-left">
                 <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-primary text-xs font-semibold mb-6 uppercase tracking-wider">
-                    <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span> Sistema Activo v1.0
+                    <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span> PishShield activo
                 </div>
-                <h1 class="text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6">
-                    El fin del Phishing.<br>
-                    Impulsado por <span class="gradient-text">Gemini & MCP</span>.
+                <h1 class="text-4xl lg:text-6xl font-bold text-white leading-[1.1] mb-6">
+                    Detección proactiva de phishing.<br>
+                    Impulsada por <span class="gradient-text">Gemini 2.5 Flash y MCP</span>.
                 </h1>
                 <p class="text-lg text-gray-400 mb-8 max-w-lg leading-relaxed">
-                    PhishShield intercepta, razona y neutraliza ataques de ingeniería social en tiempo real a través de una arquitectura distribuida entre una extensión nativa y un motor FastAPI local.
+                    PishShield analiza correos de Gmail con Gemini, verifica URLs con MCP y aplica un fallback local con reglas heurísticas para no quedarse sin respuesta.
                 </p>
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full mb-8">
                     <div class="glass-panel tech-border rounded-xl p-4 text-left">
                         <p class="text-xs uppercase tracking-[0.2em] text-primary font-semibold mb-2">Qué hace</p>
-                        <p class="text-sm text-gray-300 leading-relaxed">Detecta mensajes y páginas sospechosas, analiza el contexto y bloquea intentos de phishing antes de que el usuario interactúe.</p>
+                        <p class="text-sm text-gray-300 leading-relaxed">Detecta phishing de forma proactiva en Gmail combinando análisis semántico, verificación de enlaces y señales de riesgo.</p>
                     </div>
                     <div class="glass-panel tech-border rounded-xl p-4 text-left">
                         <p class="text-xs uppercase tracking-[0.2em] text-secondary font-semibold mb-2">Por qué importa</p>
-                        <p class="text-sm text-gray-300 leading-relaxed">Reduce el riesgo de robo de credenciales, fraude y exposición de datos sensibles en herramientas de uso diario.</p>
+                        <p class="text-sm text-gray-300 leading-relaxed">Evita robo de credenciales, fraude y ataques de ingeniería social en un canal que sigue siendo muy usado.</p>
                     </div>
                     <div class="glass-panel tech-border rounded-xl p-4 text-left">
                         <p class="text-xs uppercase tracking-[0.2em] text-accent font-semibold mb-2">Por qué debería interesarte</p>
-                        <p class="text-sm text-gray-300 leading-relaxed">Porque funciona en tiempo real, se integra con navegador y backend local, y muestra una defensa práctica con IA y MCP.</p>
+                        <p class="text-sm text-gray-300 leading-relaxed">Porque combina Gemini, MCP, Chrome Extension MV3 y automatización cada 60 segundos en una sola solución.</p>
                     </div>
                 </div>
                
@@ -83,18 +99,19 @@
                         <span class="text-xs text-gray-500 font-mono ml-4">backend/main.py — FastAPI</span>
                     </div>
                     <div class="p-5 font-mono text-sm leading-relaxed overflow-x-auto">
-                        <p class="text-gray-400">$ uvicorn backend.main:app --reload --port 8000</p>
+                        <p class="text-gray-400">$ uvicorn main:app --reload --port 8000</p>
                         <p class="text-accent">INFO:     Started server process [14320]</p>
                         <p class="text-accent">INFO:     Application startup complete.</p>
                         <br>
-                        <p class="text-gray-500"># Intercepción entrante desde Extensión de Chrome...</p>
-                        <p class="text-primary">POST /api/v1/analyze/content HTTP/1.1 <span class="text-accent">200 OK</span></p>
-                        <p class="text-gray-300">Payload: <span class="text-yellow-300">{"source": "gmail", "has_links": true}</span></p>
-                        <p class="text-gray-500"># Ejecutando Model Context Protocol (MCP)...</p>
-                        <p class="text-secondary">> Conectando con Gemini 2.5 Flash...</p>
-                        <p class="text-secondary">> Verificando URL con Safe Browsing API...</p>
-                        <p class="text-alert font-bold">> [THREAT_DETECTED] Etiqueta: SOCIAL_ENGINEERING</p>
-                        <p class="text-gray-300">Respuesta: <span class="text-yellow-300">{"action": "BLOCK_DOM", "confidence": 0.98}</span></p>
+                        <p class="text-gray-500"># Análisis automático desde la extensión...</p>
+                        <p class="text-primary">POST /analyze HTTP/1.1 <span class="text-accent">200 OK</span></p>
+                        <p class="text-gray-300">Payload: <span class="text-yellow-300">{"source": "gmail", "body": "...", "urls": []}</span></p>
+                        <p class="text-gray-500"># Gemini 2.5 Flash + fallback local...</p>
+                        <p class="text-secondary">> Procesando con Gemini v1beta...</p>
+                        <p class="text-secondary">> Aplicando reglas heurísticas si falla la IA...</p>
+                        <p class="text-secondary">> Verificando URLs con MCP y Safe Browsing...</p>
+                        <p class="text-alert font-bold">> [RATE_LIMIT] 10 req/min protegidos con slowapi</p>
+                        <p class="text-gray-300">Respuesta: <span class="text-yellow-300">{"verdict": "suspicious", "confidence": 0.84}</span></p>
                     </div>
                 </div>
             </div>
@@ -105,30 +122,28 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
                 <div>
-                    <p class="text-xs uppercase tracking-[0.35em] text-primary font-semibold mb-3">Estadísticas reales</p>
-                    <h2 class="text-3xl font-bold text-white mb-4">El phishing sigue creciendo y sigue siendo masivo</h2>
-                    <p class="text-gray-400 max-w-3xl leading-relaxed">APWG reportó 1,003,924 ataques de phishing en el primer trimestre de 2025, su volumen más alto desde finales de 2023. Eso confirma que el problema no es puntual: el phishing sigue operando a escala de millones por trimestre.</p>
+                    <p class="text-xs uppercase tracking-[0.35em] text-primary font-semibold mb-3">Lo más interesante</p>
+                    <h2 class="text-3xl font-bold text-white mb-4">Cinco ideas clave del proyecto</h2>
+                    <p class="text-gray-400 max-w-3xl leading-relaxed">El proyecto combina IA, verificación de URLs y automatización para no depender de un único mecanismo de defensa.</p>
                 </div>
-                <div class="text-sm text-gray-400 max-w-xl lg:text-right">
-                    Fuente principal: <a class="text-primary hover:text-blue-300" href="https://www.apwg.org/trendsreports/" target="_blank" rel="noreferrer">APWG Phishing Activity Trends Reports</a>
-                </div>
+                
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="glass-panel tech-border p-8 rounded-xl">
-                    <p class="text-xs uppercase tracking-[0.25em] text-gray-400 mb-3">Q1 2025</p>
-                    <p class="text-4xl font-bold text-white mb-3">1,003,924</p>
-                    <p class="text-gray-300 leading-relaxed">Ataques de phishing observados por APWG en un solo trimestre.</p>
+                    <p class="text-xs uppercase tracking-[0.25em] text-gray-400 mb-3">Análisis dual</p>
+                    <p class="text-4xl font-bold text-white mb-3">Gemini + local</p>
+                    <p class="text-gray-300 leading-relaxed">Si Gemini falla por timeout o cuota, el sistema sigue con reglas heurísticas para mantener la respuesta activa.</p>
                 </div>
                 <div class="glass-panel tech-border p-8 rounded-xl">
-                    <p class="text-xs uppercase tracking-[0.25em] text-gray-400 mb-3">Tendencia</p>
-                    <p class="text-4xl font-bold text-white mb-3">+1M</p>
-                    <p class="text-gray-300 leading-relaxed">Volumen que volvió a superar el millón y marcó el nivel más alto desde finales de 2023.</p>
+                    <p class="text-xs uppercase tracking-[0.25em] text-gray-400 mb-3">Protección</p>
+                    <p class="text-4xl font-bold text-white mb-3">10 req/min</p>
+                    <p class="text-gray-300 leading-relaxed">El backend usa slowapi para limitar solicitudes y proteger tanto el servicio como la cuota de Gemini.</p>
                 </div>
                 <div class="glass-panel tech-border p-8 rounded-xl">
-                    <p class="text-xs uppercase tracking-[0.25em] text-gray-400 mb-3">Vector activo</p>
-                    <p class="text-4xl font-bold text-white mb-3">QR + Email</p>
-                    <p class="text-gray-300 leading-relaxed">APWG también destacó el uso masivo de correos con códigos QR para llevar a sitios de phishing y malware.</p>
+                    <p class="text-xs uppercase tracking-[0.25em] text-gray-400 mb-3">Detección</p>
+                    <p class="text-4xl font-bold text-white mb-3">Homoglyphs</p>
+                    <p class="text-gray-300 leading-relaxed">Detecta dominios parecidos a marcas reales con distancia de Levenshtein, como paypa1 o go0gle.</p>
                 </div>
             </div>
         </div>
@@ -137,8 +152,8 @@
     <section class="py-24 bg-surface/30 border-y border-gray-800/50" id="arquitectura">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-white mb-4">Arquitectura de Defensa en Profundidad</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">PhishShield no es un simple filtro. Es un pipeline de seguridad completo que va desde el navegador hasta los LLMs más avanzados.</p>
+                <h2 class="text-3xl font-bold text-white mb-4">Stack técnico y operación</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto">PishShield combina Chrome Extension MV3, FastAPI, Gemini 2.5 Flash, MCP y Docker Compose en un flujo simple de entender y ejecutar.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
@@ -148,24 +163,24 @@
                     <div class="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 border border-blue-500/20 text-primary">
                         <i class="fa-solid fa-puzzle-piece text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">1. Extensión Cliente</h3>
-                    <p class="text-gray-400 text-sm">Escaneo del DOM en tiempo real. Captura el contexto visual y enlaces de Gmail/Facebook e inyecta la pantalla de bloqueo (Red Overlay).</p>
+                    <h3 class="text-xl font-bold text-white mb-3">1. Chrome Extension MV3</h3>
+                    <p class="text-gray-400 text-sm">Analiza Gmail automáticamente cada 60 segundos, actualiza el badge y dispara notificaciones cuando detecta riesgo.</p>
                 </div>
 
                 <div class="glass-panel tech-border p-8 rounded-xl text-center flex flex-col items-center z-10 bg-background/80">
                     <div class="w-16 h-16 bg-indigo-500/10 rounded-2xl flex items-center justify-center mb-6 border border-indigo-500/20 text-secondary">
                         <i class="fa-solid fa-server text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">2. Core Backend</h3>
-                    <p class="text-gray-400 text-sm">Desarrollado en FastAPI. Orquesta las peticiones, maneja la autenticación OAuth y gestiona la cola de análisis de forma asíncrona y escalable.</p>
+                    <h3 class="text-xl font-bold text-white mb-3">2. FastAPI Backend</h3>
+                    <p class="text-gray-400 text-sm">Recibe el correo, ejecuta el análisis y aplica rate limiting para proteger el servicio y la cuota de la API.</p>
                 </div>
 
                 <div class="glass-panel tech-border p-8 rounded-xl text-center flex flex-col items-center z-10 bg-background/80">
                     <div class="w-16 h-16 bg-emerald-500/10 rounded-2xl flex items-center justify-center mb-6 border border-emerald-500/20 text-accent">
                         <i class="fa-solid fa-brain text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">3. MCP Server</h3>
-                    <p class="text-gray-400 text-sm">Integra Google Gemini 2.5 Flash para el análisis semántico y la API de Safe Browsing para la validación de URLs maliciosas.</p>
+                    <h3 class="text-xl font-bold text-white mb-3">3. Gemini + MCP</h3>
+                    <p class="text-gray-400 text-sm">Gemini 2.5 Flash analiza el contenido y MCP verifica URLs con Google Safe Browsing en tiempo real.</p>
                 </div>
             </div>
         </div>
@@ -175,9 +190,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
-                    <h2 class="text-3xl font-bold text-white mb-6">Motor de Razonamiento Semántico</h2>
+                    <h2 class="text-3xl font-bold text-white mb-6">Análisis dual con fallback local</h2>
                     <p class="text-gray-400 mb-8 leading-relaxed">
-                        Los filtros tradicionales se basan en listas negras estáticas. PhishShield utiliza el <strong>Model Context Protocol (MCP)</strong> para razonar sobre la intención del atacante.
+                        PishShield no depende solo de la IA. Primero intenta clasificar el correo con <strong>Gemini 2.5 Flash</strong> y, si hay un error, cae a un análisis local con reglas heurísticas.
                     </p>
                     <ul class="space-y-6">
                         <li class="flex items-start gap-4">
@@ -185,8 +200,8 @@
                                 <i class="fa-solid fa-bolt text-primary text-sm"></i>
                             </div>
                             <div>
-                                <h4 class="text-white font-semibold mb-1">Cero Latencia Perceptible</h4>
-                                <p class="text-sm text-gray-400">Gracias al procesamiento asíncrono de FastAPI y Gemini 2.5 Flash, las decisiones de bloqueo ocurren en milisegundos.</p>
+                                <h4 class="text-white font-semibold mb-1">Prompt en español y salida estructurada</h4>
+                                <p class="text-sm text-gray-400">Gemini devuelve verdict, confidence, reason e indicators para que el análisis sea claro y reutilizable.</p>
                             </div>
                         </li>
                         <li class="flex items-start gap-4">
@@ -194,8 +209,8 @@
                                 <i class="fa-solid fa-shield-virus text-alert text-sm"></i>
                             </div>
                             <div>
-                                <h4 class="text-white font-semibold mb-1">Safe Browsing API Integrado</h4>
-                                <p class="text-sm text-gray-400">El servidor MCP cruza los datos semánticos con la base de datos de amenazas globales de Google en tiempo real.</p>
+                                <h4 class="text-white font-semibold mb-1">Verificación de URLs con MCP</h4>
+                                <p class="text-sm text-gray-400">El servidor MCP consulta Safe Browsing y devuelve un resultado seguro incluso cuando el servicio no responde.</p>
                             </div>
                         </li>
                         <li class="flex items-start gap-4">
@@ -203,23 +218,23 @@
                                 <i class="fa-solid fa-code text-accent text-sm"></i>
                             </div>
                             <div>
-                                <h4 class="text-white font-semibold mb-1">Bloqueo a Nivel DOM</h4>
-                                <p class="text-sm text-gray-400">Si se detecta peligro, la extensión inyecta código que desactiva botones y enlaces, previniendo el robo de credenciales.</p>
+                                <h4 class="text-white font-semibold mb-1">Homoglyphs y automatización</h4>
+                                <p class="text-sm text-gray-400">Detecta dominios parecidos con Levenshtein, actualiza badge y avisa con notificaciones si la confianza supera 80%.</p>
                             </div>
                         </li>
                     </ul>
                 </div>
                 <div class="relative">
                     <div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 blur-3xl rounded-full opacity-50"></div>
-                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" alt="Cybersecurity Dashboard" class="relative rounded-2xl border border-gray-800 shadow-2xl grayscale opacity-80 hover:grayscale-0 transition-all duration-500">
+                    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&q=80&w=800" alt="Panel de ciberseguridad" class="relative rounded-2xl border border-gray-800 shadow-2xl grayscale opacity-80 hover:grayscale-0 transition-all duration-500">
                     
                     <div class="absolute -bottom-6 -left-6 glass-panel tech-border p-4 rounded-xl shadow-xl flex items-center gap-4">
                         <div class="w-10 h-10 rounded-full bg-alert/20 flex items-center justify-center text-alert">
                             <i class="fa-solid fa-triangle-exclamation"></i>
                         </div>
                         <div>
-                            <p class="text-white font-bold text-sm">Phishing Bloqueado</p>
-                            <p class="text-xs text-gray-400">URL: paypal-secure-update.com</p>
+                            <p class="text-white font-bold text-sm">Análisis automático activo</p>
+                            <p class="text-xs text-gray-400">Cada 60 segundos con Chrome Extension MV3</p>
                         </div>
                     </div>
                 </div>
@@ -234,14 +249,14 @@
             <div class="mb-10">
                 <a href="https://github.com/David-ZemaP/IA-SHIELD" target="_blank" rel="noreferrer" class="inline-flex items-center gap-3 bg-primary hover:bg-blue-600 text-white font-semibold px-8 py-4 rounded-lg transition-colors shadow-[0_0_15px_rgba(59,130,246,0.25)]">
                     <i class="fa-brands fa-github text-lg"></i>
-                    Ver repositorio IA-SHIELD
+                    Ver repositorio PishShield
                 </a>
             </div>
-            <p class="text-xs uppercase tracking-[0.35em] text-primary font-semibold mb-3">Contáctanos</p>
-            <h2 class="text-3xl font-bold text-white mb-6">Hablemos de PhishShield</h2>
-            <p class="text-gray-400 mb-10 max-w-2xl mx-auto">Si quieres más información, escribe o llama usando estos datos de contacto.</p>
+            <p class="text-xs uppercase tracking-[0.35em] text-primary font-semibold mb-3">Proyecto oficial</p>
+            <h2 class="text-3xl font-bold text-white mb-6">Gemini, MCP y Chrome Extension MV3</h2>
+            <p class="text-gray-400 mb-6 max-w-2xl mx-auto">Consulta el repositorio para ver el backend en FastAPI, el servidor MCP, la extensión y las pruebas del proyecto.</p>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto mb-6">
                 <a href="tel:60364625" class="glass-panel tech-border hover:bg-gray-800/50 text-white font-medium px-8 py-5 rounded-lg transition-colors text-left">
                     <p class="text-xs uppercase tracking-[0.25em] text-gray-400 mb-2">Teléfono</p>
                     <p class="text-xl font-bold">60364625</p>
@@ -255,7 +270,7 @@
 
         <div class="border-t border-gray-800/50 py-6 text-center">
             <p class="text-gray-500 text-sm">
-                &copy; 2026 PhishShield. Construido sobre FastAPI, Gemini 2.5 Flash y MCP.
+                &copy; 2026 PishShield. Detección proactiva de phishing con Gemini 2.5 Flash y MCP.
             </p>
         </div>
     </footer>
