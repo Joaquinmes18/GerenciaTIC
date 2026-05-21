@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhishShield | Qué detectamos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/main.js"></script>
+</head>
+<body class="antialiased font-sans selection:bg-primary selection:text-white flex flex-col min-h-screen">
+    <nav class="fixed w-full z-50 glass-panel border-b border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3">
+                    <span class="text-white font-bold text-xl tracking-wide">Phish<span class="text-primary">Shield</span></span>
+                </a>
+                <div class="hidden md:flex space-x-3 items-center text-sm font-medium">
+                    <a href="index.html" class="glass-panel text-white px-5 py-2 rounded-lg transition-colors">Inicio</a>
+                    <a href="educacion.html" class="glass-panel text-white px-5 py-2 rounded-lg transition-colors">Educación</a>
+                    <a href="como-funciona.html" class="glass-panel text-white px-5 py-2 rounded-lg transition-colors">Cómo funciona</a>
+                    <a href="que-detectamos.html" class="bg-primary text-white px-5 py-2 rounded-lg">Qué detectamos</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-28 pb-20 flex-1">
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <p class="text-xs uppercase tracking-[0.35em] text-primary font-semibold mb-3">¿Qué detectamos?</p>
+                <h1 class="text-4xl lg:text-5xl font-bold text-white mb-5">Ejemplos reales de señales de riesgo</h1>
+                <p class="text-gray-400 max-w-3xl mx-auto leading-relaxed">No solo detectamos un correo “malo”. Buscamos patrones concretos que suelen aparecer en phishing, mensajes sospechosos y contenido legítimo.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="glass-panel tech-border p-8 rounded-xl">
+                    <div class="flex items-center gap-3 mb-5 text-red-400 text-2xl">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <h2 class="text-2xl font-bold text-white">Phishing</h2>
+                    </div>
+                    <ul class="space-y-3 text-gray-300">
+                        <li>robo de credenciales</li>
+                        <li>enlaces falsos</li>
+                        <li>urgencia artificial</li>
+                    </ul>
+                </div>
+
+                <div class="glass-panel tech-border p-8 rounded-xl">
+                    <div class="flex items-center gap-3 mb-5 text-yellow-300 text-2xl">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <h2 class="text-2xl font-bold text-white">Sospechoso</h2>
+                    </div>
+                    <ul class="space-y-3 text-gray-300">
+                        <li>remitente extraño</li>
+                        <li>dominios raros</li>
+                        <li>enlaces acortados</li>
+                    </ul>
+                </div>
+
+                <div class="glass-panel tech-border p-8 rounded-xl">
+                    <div class="flex items-center gap-3 mb-5 text-emerald-400 text-2xl">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <h2 class="text-2xl font-bold text-white">Seguro</h2>
+                    </div>
+                    <ul class="space-y-3 text-gray-300">
+                        <li>remitente verificado</li>
+                        <li>sin patrones maliciosos</li>
+                        <li>estructura limpia</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="mt-auto border-t border-gray-800/50 bg-surface/50">
+        <div class="max-w-4xl mx-auto px-4 py-10 text-center">
+            <a href="index.html" class="text-gray-300 hover:text-white">Volver al inicio</a>
+        </div>
+    </footer>
+</body>
+</html>
