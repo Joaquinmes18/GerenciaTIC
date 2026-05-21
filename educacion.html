@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PhishShield | Educación</title>
+    <title>PishShield | Educación</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -15,13 +15,27 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <a href="index.html" class="flex-shrink-0 flex items-center gap-3">
-                    <span class="text-white font-bold text-xl tracking-wide">Phish<span class="text-primary">Shield</span></span>
+                    <span class="text-white font-bold text-xl tracking-wide">Pish<span class="text-primary">Shield</span></span>
                 </a>
+                <button id="nav-toggle" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white focus:outline-none" aria-expanded="false" aria-label="Abrir menú">
+                    <svg class="h-6 w-6 hamburger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg class="h-6 w-6 close-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
                 <div class="hidden md:flex space-x-3 items-center text-sm font-medium">
                     <a href="index.html" class="glass-panel text-white px-5 py-2 rounded-lg transition-colors">Inicio</a>
                     <a href="educacion.html" class="bg-primary text-white px-5 py-2 rounded-lg">Educación</a>
                     <a href="como-funciona.html" class="glass-panel text-white px-5 py-2 rounded-lg transition-colors">Cómo funciona</a>
                     <a href="que-detectamos.html" class="glass-panel text-white px-5 py-2 rounded-lg transition-colors">Qué detectamos</a>
+                </div>
+                <div id="mobile-menu" class="md:hidden hidden px-4 pt-2 pb-3 space-y-1">
+                    <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white">Inicio</a>
+                    <a href="educacion.html" class="block px-3 py-2 rounded-md text-base font-medium text-white">Educación</a>
+                    <a href="como-funciona.html" class="block px-3 py-2 rounded-md text-base font-medium text-white">Cómo funciona</a>
+                    <a href="que-detectamos.html" class="block px-3 py-2 rounded-md text-base font-medium text-white">Qué detectamos</a>
                 </div>
             </div>
         </div>
@@ -31,8 +45,8 @@
         <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-14">
                 <p class="text-xs uppercase tracking-[0.35em] text-primary font-semibold mb-3">Sección educativa</p>
-                <h1 class="text-3xl lg:text-4xl font-bold text-white mb-4">Aprende a reconocer phishing</h1>
-                <p class="text-gray-400 max-w-3xl mx-auto leading-relaxed">Esta pantalla aporta valor real: ayuda a que cualquier persona identifique señales de riesgo antes de hacer clic o entregar credenciales.</p>
+                <h1 class="text-3xl lg:text-4xl font-bold text-white mb-4">Aprende a reconocer phishing en Gmail</h1>
+                <p class="text-gray-400 max-w-3xl mx-auto leading-relaxed">Esta pantalla resume señales útiles para que cualquier persona identifique un ataque antes de hacer clic o entregar credenciales.</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
@@ -49,7 +63,7 @@
                             </div>
                             <div>
                                 <h3 class="text-white font-semibold mb-1">Revisa dominios</h3>
-                                <p class="text-sm text-gray-400">Fíjate en letras cambiadas, subdominios raros y dominios que imitan marcas conocidas.</p>
+                                <p class="text-sm text-gray-400">Fíjate en letras cambiadas, subdominios raros y dominios que imitan marcas conocidas, como paypa1 o go0gle.</p>
                             </div>
                         </div>
 
@@ -59,7 +73,7 @@
                             </div>
                             <div>
                                 <h3 class="text-white font-semibold mb-1">Cuidado con urgencias</h3>
-                                <p class="text-sm text-gray-400">Los mensajes que presionan para actuar “ya” suelen buscar que bajes la guardia.</p>
+                                <p class="text-sm text-gray-400">Los mensajes que presionan para actuar “ya” suelen buscar que bajes la guardia y respondas sin verificar.</p>
                             </div>
                         </div>
 

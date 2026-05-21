@@ -17,66 +17,56 @@ tailwind.config = {
     }
 };
 
+// Mobile nav toggle with animations + icon swap + outside-click close
 document.addEventListener('DOMContentLoaded', () => {
-    const feedbackForm = document.querySelector('#feedback form');
+    const btn = document.getElementById('nav-toggle');
+    const menu = document.getElementById('mobile-menu');
+    if (!btn || !menu) return;
+    const hamburger = btn.querySelector('.hamburger-icon');
+    const closeIcon = btn.querySelector('.close-icon');
+    const ENTER_MS = 200;
+    const LEAVE_MS = 160;
 
-    if (!feedbackForm) {
-        return;
-    }
+    const openMenu = () => {
+        menu.classList.remove('hidden');
+        menu.classList.remove('menu-leave');
+        // trigger enter animation
+        void menu.offsetWidth;
+        menu.classList.add('menu-enter');
+        if (hamburger) hamburger.classList.add('hidden');
+        if (closeIcon) closeIcon.classList.remove('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+    };
 
-    const submitButton = feedbackForm.querySelector('button[type="submit"]');
-    const originalButtonText = submitButton ? submitButton.textContent.trim() : '';
+    const closeMenu = () => {
+        menu.classList.remove('menu-enter');
+        menu.classList.add('menu-leave');
+        if (hamburger) hamburger.classList.remove('hidden');
+        if (closeIcon) closeIcon.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+        setTimeout(() => menu.classList.add('hidden'), LEAVE_MS);
+    };
 
-    feedbackForm.addEventListener('submit', async (event) => {
-        event.preventDefault();
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (menu.classList.contains('hidden')) openMenu(); else closeMenu();
+    });
 
-        const formData = new FormData(feedbackForm);
-        const payload = {
-            nombre: String(formData.get('nombre') || '').trim(),
-            email: String(formData.get('email') || '').trim(),
-            sugerencia: String(formData.get('sugerencia') || '').trim(),
-            funcion: String(formData.get('funcion') || '').trim(),
-        };
-
-        if (!payload.nombre || !payload.email || !payload.sugerencia || !payload.funcion) {
-            window.alert('Completa todos los campos antes de enviar.');
-            return;
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!menu.classList.contains('hidden') && !btn.contains(e.target) && !menu.contains(e.target)) {
+            closeMenu();
         }
+    });
 
-        if (submitButton) {
-            submitButton.disabled = true;
-            submitButton.textContent = 'Enviando...';
-        }
-
-        try {
-            const response = await fetch('http://127.0.0.1:8000/api/feedback', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(payload),
-            });
-
-            if (!response.ok) {
-                throw new Error('No fue posible guardar el feedback.');
-            }
-
-            feedbackForm.reset();
-            window.alert('Gracias. Tu sugerencia fue guardada.');
-        } catch (error) {
-            const pendingFeedback = JSON.parse(localStorage.getItem('phishshield-feedback-pending') || '[]');
-            pendingFeedback.push({
-                ...payload,
-                created_at: new Date().toISOString(),
-            });
-            localStorage.setItem('phishshield-feedback-pending', JSON.stringify(pendingFeedback));
-            feedbackForm.reset();
-            window.alert('No se pudo conectar con el backend. Tu sugerencia quedó guardada localmente para enviarla luego.');
-        } finally {
-            if (submitButton) {
-                submitButton.disabled = false;
-                submitButton.textContent = originalButtonText || 'Enviar feedback';
-            }
+    // Close when resizing to desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768 && !menu.classList.contains('hidden')) {
+            menu.classList.add('hidden');
+            menu.classList.remove('menu-enter', 'menu-leave');
+            if (hamburger) hamburger.classList.remove('hidden');
+            if (closeIcon) closeIcon.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
         }
     });
 });
