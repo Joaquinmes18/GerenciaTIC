@@ -5,73 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PhishShield | Prevención de Phishing con IA y MCP</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    },
-                    colors: {
-                        background: '#030712', // Slate 950
-                        surface: '#111827', // Gray 900
-                        primary: '#3b82f6', // Blue 500
-                        secondary: '#6366f1', // Indigo 500
-                        accent: '#10b981', // Emerald 500
-                        alert: '#ef4444', // Red 500
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            background-color: #030712;
-            color: #f3f4f6;
-        }
-        /* Efectos profesionales SaaS */
-        .glass-panel {
-            background: rgba(17, 24, 39, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .gradient-text {
-            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .hero-glow {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(3, 7, 18, 0) 70%);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: -1;
-            pointer-events: none;
-        }
-        .tech-border {
-            position: relative;
-        }
-        .tech-border::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            border-radius: inherit;
-            padding: 1px;
-            background: linear-gradient(180deg, rgba(59, 130, 246, 0.3), rgba(255, 255, 255, 0));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-        }
-    </style>
+    <script src="js/main.js"></script>
 </head>
 <body class="antialiased font-sans selection:bg-primary selection:text-white flex flex-col min-h-screen">
 
@@ -95,12 +32,9 @@
                     <span class="text-white font-bold text-xl tracking-wide">Phish<span class="text-primary">Shield</span></span>
                 </div>
                 <div class="hidden md:flex space-x-8 items-center text-sm font-medium">
-                    <a href="#arquitectura" class="text-gray-400 hover:text-white transition-colors">Arquitectura</a>
-                    <a href="#motor-ia" class="text-gray-400 hover:text-white transition-colors">Motor IA</a>
-                    <a href="#integracion" class="text-gray-400 hover:text-white transition-colors">Extensión</a>
-                    <a href="#" class="bg-primary hover:bg-blue-600 text-white px-5 py-2 rounded-lg transition-all shadow-[0_0_15px_rgba(59,130,246,0.3)]">
-                        Instalar Extensión
-                    </a>
+                    <a href="educacion.html" class="glass-panel text-white px-5 py-2 rounded-lg transition-colors">Educación</a>
+                    <a href="como-funciona.html" class="glass-panel text-white px-5 py-2 rounded-lg transition-colors">Cómo funciona</a>
+                    <a href="que-detectamos.html" class="glass-panel text-white px-5 py-2 rounded-lg transition-colors">Qué detectamos</a>
                 </div>
             </div>
         </div>
@@ -121,14 +55,21 @@
                 <p class="text-lg text-gray-400 mb-8 max-w-lg leading-relaxed">
                     PhishShield intercepta, razona y neutraliza ataques de ingeniería social en tiempo real a través de una arquitectura distribuida entre una extensión nativa y un motor FastAPI local.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                    <a href="#" class="bg-white hover:bg-gray-100 text-background font-bold px-8 py-3.5 rounded-lg transition-colors text-center flex items-center justify-center gap-2">
-                        <i class="fa-brands fa-chrome"></i> Añadir a Chrome
-                    </a>
-                    <a href="#arquitectura" class="glass-panel hover:bg-gray-800/50 text-white font-medium px-8 py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2 text-center">
-                        Ver Documentación
-                    </a>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full mb-8">
+                    <div class="glass-panel tech-border rounded-xl p-4 text-left">
+                        <p class="text-xs uppercase tracking-[0.2em] text-primary font-semibold mb-2">Qué hace</p>
+                        <p class="text-sm text-gray-300 leading-relaxed">Detecta mensajes y páginas sospechosas, analiza el contexto y bloquea intentos de phishing antes de que el usuario interactúe.</p>
+                    </div>
+                    <div class="glass-panel tech-border rounded-xl p-4 text-left">
+                        <p class="text-xs uppercase tracking-[0.2em] text-secondary font-semibold mb-2">Por qué importa</p>
+                        <p class="text-sm text-gray-300 leading-relaxed">Reduce el riesgo de robo de credenciales, fraude y exposición de datos sensibles en herramientas de uso diario.</p>
+                    </div>
+                    <div class="glass-panel tech-border rounded-xl p-4 text-left">
+                        <p class="text-xs uppercase tracking-[0.2em] text-accent font-semibold mb-2">Por qué debería interesarte</p>
+                        <p class="text-sm text-gray-300 leading-relaxed">Porque funciona en tiempo real, se integra con navegador y backend local, y muestra una defensa práctica con IA y MCP.</p>
+                    </div>
                 </div>
+               
             </div>
 
             <div class="lg:w-1/2 w-full">
@@ -155,6 +96,39 @@
                         <p class="text-alert font-bold">> [THREAT_DETECTED] Etiqueta: SOCIAL_ENGINEERING</p>
                         <p class="text-gray-300">Respuesta: <span class="text-yellow-300">{"action": "BLOCK_DOM", "confidence": 0.98}</span></p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-surface/40 border-y border-gray-800/50" id="estadisticas">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+                <div>
+                    <p class="text-xs uppercase tracking-[0.35em] text-primary font-semibold mb-3">Estadísticas reales</p>
+                    <h2 class="text-3xl font-bold text-white mb-4">El phishing sigue creciendo y sigue siendo masivo</h2>
+                    <p class="text-gray-400 max-w-3xl leading-relaxed">APWG reportó 1,003,924 ataques de phishing en el primer trimestre de 2025, su volumen más alto desde finales de 2023. Eso confirma que el problema no es puntual: el phishing sigue operando a escala de millones por trimestre.</p>
+                </div>
+                <div class="text-sm text-gray-400 max-w-xl lg:text-right">
+                    Fuente principal: <a class="text-primary hover:text-blue-300" href="https://www.apwg.org/trendsreports/" target="_blank" rel="noreferrer">APWG Phishing Activity Trends Reports</a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-panel tech-border p-8 rounded-xl">
+                    <p class="text-xs uppercase tracking-[0.25em] text-gray-400 mb-3">Q1 2025</p>
+                    <p class="text-4xl font-bold text-white mb-3">1,003,924</p>
+                    <p class="text-gray-300 leading-relaxed">Ataques de phishing observados por APWG en un solo trimestre.</p>
+                </div>
+                <div class="glass-panel tech-border p-8 rounded-xl">
+                    <p class="text-xs uppercase tracking-[0.25em] text-gray-400 mb-3">Tendencia</p>
+                    <p class="text-4xl font-bold text-white mb-3">+1M</p>
+                    <p class="text-gray-300 leading-relaxed">Volumen que volvió a superar el millón y marcó el nivel más alto desde finales de 2023.</p>
+                </div>
+                <div class="glass-panel tech-border p-8 rounded-xl">
+                    <p class="text-xs uppercase tracking-[0.25em] text-gray-400 mb-3">Vector activo</p>
+                    <p class="text-4xl font-bold text-white mb-3">QR + Email</p>
+                    <p class="text-gray-300 leading-relaxed">APWG también destacó el uso masivo de correos con códigos QR para llevar a sitios de phishing y malware.</p>
                 </div>
             </div>
         </div>
@@ -253,19 +227,69 @@
         </div>
     </section>
 
+    <section class="py-24 bg-background/70 border-y border-gray-800/50" id="feedback">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <p class="text-xs uppercase tracking-[0.35em] text-primary font-semibold mb-3">Sugerencias y feedback</p>
+                <h2 class="text-3xl font-bold text-white mb-4">Muy buena idea</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto leading-relaxed">Cuéntanos qué mejorarías en PhishShield. Tu opinión ayuda a priorizar funciones útiles y hace que el proyecto evolucione con más foco.</p>
+            </div>
+
+            <div class="glass-panel tech-border p-8 sm:p-10 rounded-2xl">
+                <form class="grid grid-cols-1 gap-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <label class="block">
+                            <span class="block text-sm font-medium text-gray-300 mb-2">Nombre</span>
+                            <input type="text" name="nombre" placeholder="Tu nombre" class="w-full rounded-lg bg-background/70 border border-gray-800 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/60 focus:border-primary/60">
+                        </label>
+                        <label class="block">
+                            <span class="block text-sm font-medium text-gray-300 mb-2">Email</span>
+                            <input type="email" name="email" placeholder="tu@email.com" class="w-full rounded-lg bg-background/70 border border-gray-800 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/60 focus:border-primary/60">
+                        </label>
+                    </div>
+
+                    <label class="block">
+                        <span class="block text-sm font-medium text-gray-300 mb-2">Sugerencia</span>
+                        <textarea name="sugerencia" rows="4" placeholder="Escribe tu sugerencia aquí" class="w-full rounded-lg bg-background/70 border border-gray-800 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/60 focus:border-primary/60"></textarea>
+                    </label>
+
+                    <label class="block">
+                        <span class="block text-sm font-medium text-gray-300 mb-2">¿Qué función agregarías?</span>
+                        <textarea name="funcion" rows="3" placeholder="Por ejemplo: alertas en tiempo real, historial de amenazas, modo empresa..." class="w-full rounded-lg bg-background/70 border border-gray-800 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/60 focus:border-primary/60"></textarea>
+                    </label>
+
+                    <div class="flex justify-center pt-2">
+                        <button type="submit" class="bg-primary hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors shadow-[0_0_15px_rgba(59,130,246,0.25)]">
+                            Enviar feedback
+                        </button>
+                    </div>
+
+                    <div class="flex justify-center pt-1">
+                        <a href="http://127.0.0.1:8000/admin/feedback" target="_blank" rel="noreferrer" class="text-sm text-gray-400 hover:text-white transition-colors">
+                            Ver registros guardados del formulario
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <footer class="mt-auto border-t border-gray-800/50 bg-surface/50 relative overflow-hidden" id="contacto">
         <div class="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none"></div>
         
         <div class="max-w-4xl mx-auto px-4 py-20 text-center relative z-10">
-            <h2 class="text-3xl font-bold text-white mb-6">Protege tu infraestructura hoy mismo</h2>
-            <p class="text-gray-400 mb-10 max-w-2xl mx-auto">Descarga el repositorio, configura el backend FastAPI y despliega la extensión PhishShield en minutos.</p>
-            
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#" class="bg-primary hover:bg-blue-600 text-white font-medium px-8 py-3 rounded-lg transition-colors flex items-center justify-center gap-2">
-                    <i class="fa-brands fa-github text-xl"></i> Clonar Repositorio
+            <p class="text-xs uppercase tracking-[0.35em] text-primary font-semibold mb-3">Contáctanos</p>
+            <h2 class="text-3xl font-bold text-white mb-6">Hablemos de PhishShield</h2>
+            <p class="text-gray-400 mb-10 max-w-2xl mx-auto">Si quieres más información, escribe o llama usando estos datos de contacto.</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                <a href="tel:60364625" class="glass-panel tech-border hover:bg-gray-800/50 text-white font-medium px-8 py-5 rounded-lg transition-colors text-left">
+                    <p class="text-xs uppercase tracking-[0.25em] text-gray-400 mb-2">Teléfono</p>
+                    <p class="text-xl font-bold">60364625</p>
                 </a>
-                <a href="#" class="glass-panel hover:bg-gray-800 text-white font-medium px-8 py-3 rounded-lg transition-colors">
-                    Ver Documentación API
+                <a href="mailto:pishshield@gmail.com" class="glass-panel tech-border hover:bg-gray-800/50 text-white font-medium px-8 py-5 rounded-lg transition-colors text-left">
+                    <p class="text-xs uppercase tracking-[0.25em] text-gray-400 mb-2">Correo</p>
+                    <p class="text-xl font-bold">pishshield@gmail.com</p>
                 </a>
             </div>
         </div>

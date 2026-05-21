@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhishShield | Educación</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/main.js"></script>
+</head>
+<body class="antialiased font-sans selection:bg-primary selection:text-white flex flex-col min-h-screen">
+    <nav class="fixed w-full z-50 glass-panel border-b border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3">
+                    <span class="text-white font-bold text-xl tracking-wide">Phish<span class="text-primary">Shield</span></span>
+                </a>
+                <div class="hidden md:flex space-x-3 items-center text-sm font-medium">
+                    <a href="index.html" class="glass-panel text-white px-5 py-2 rounded-lg transition-colors">Inicio</a>
+                    <a href="educacion.html" class="bg-primary text-white px-5 py-2 rounded-lg">Educación</a>
+                    <a href="como-funciona.html" class="glass-panel text-white px-5 py-2 rounded-lg transition-colors">Cómo funciona</a>
+                    <a href="que-detectamos.html" class="glass-panel text-white px-5 py-2 rounded-lg transition-colors">Qué detectamos</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-28 pb-20 flex-1">
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <p class="text-xs uppercase tracking-[0.35em] text-primary font-semibold mb-3">Sección educativa</p>
+                <h1 class="text-3xl lg:text-4xl font-bold text-white mb-4">Aprende a reconocer phishing</h1>
+                <p class="text-gray-400 max-w-3xl mx-auto leading-relaxed">Esta pantalla aporta valor real: ayuda a que cualquier persona identifique señales de riesgo antes de hacer clic o entregar credenciales.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                <div class="glass-panel tech-border p-8 rounded-xl">
+                    <div class="flex items-center gap-3 mb-6 text-primary">
+                        <i class="fa-solid fa-shield-halved text-2xl"></i>
+                        <h2 class="text-2xl font-bold text-white">Tips rápidos</h2>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-primary shrink-0">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold mb-1">Revisa dominios</h3>
+                                <p class="text-sm text-gray-400">Fíjate en letras cambiadas, subdominios raros y dominios que imitan marcas conocidas.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-yellow-300 shrink-0">
+                                <i class="fa-solid fa-bell"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold mb-1">Cuidado con urgencias</h3>
+                                <p class="text-sm text-gray-400">Los mensajes que presionan para actuar “ya” suelen buscar que bajes la guardia.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center text-alert shrink-0">
+                                <i class="fa-solid fa-key"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold mb-1">Nunca ingreses contraseñas desde links</h3>
+                                <p class="text-sm text-gray-400">Si el correo te lleva a un formulario, entra al sitio manualmente en lugar de usar el enlace del mensaje.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-accent shrink-0">
+                                <i class="fa-solid fa-user-check"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold mb-1">Verifica remitentes</h3>
+                                <p class="text-sm text-gray-400">Comprueba el correo real del remitente y no solo el nombre visible que aparece en pantalla.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel tech-border p-8 rounded-xl relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10 pointer-events-none"></div>
+                    <div class="relative z-10">
+                        <p class="text-xs uppercase tracking-[0.3em] text-gray-400 mb-4">Aprendizaje práctico</p>
+                        <h2 class="text-2xl font-bold text-white mb-5">Detectar señales antes de que sea tarde</h2>
+                        <p class="text-gray-400 leading-relaxed mb-6">Cuando una persona aprende a reconocer dominios extraños, urgencia artificial, enlaces sospechosos y remitentes falsos, reduce muchísimo la probabilidad de caer en un ataque.</p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="rounded-xl bg-background/60 border border-gray-800 p-4">
+                                <p class="text-sm text-gray-300 font-medium mb-1">Lo que ganas</p>
+                                <p class="text-sm text-gray-400">Más confianza, menos errores y una cultura de seguridad más fuerte.</p>
+                            </div>
+                            <div class="rounded-xl bg-background/60 border border-gray-800 p-4">
+                                <p class="text-sm text-gray-300 font-medium mb-1">Lo que aporta</p>
+                                <p class="text-sm text-gray-400">Hace que el proyecto no solo sea técnico, sino también socialmente útil.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="mt-auto border-t border-gray-800/50 bg-surface/50">
+        <div class="max-w-4xl mx-auto px-4 py-10 text-center">
+            <a href="index.html" class="text-gray-300 hover:text-white">Volver al inicio</a>
+        </div>
+    </footer>
+</body>
+</html>
